@@ -26,4 +26,17 @@ Using
 -----
 
 The destination directory for the image to be extracted to must be 
-exported over NFS.  Then run the sc
+exported over NFS.  Then run the script bin/qemu-extract-image.  It takes 
+the following arguments:
+
+* image file
+* NFS mount (must be an IP address as DNS is not available in VM)
+* destination directory (relative to NFS mount)
+* comma-seperated list of filesystems to try.
+
+For example:
+
+./dist/bin/qemu-extract-image /doss/doss-devel/working/digipres/test/images/nla.dp-n113301/nla.dp-n113301.img 192.102.239.241:/doss-devel working/digipres/test/images/nla.dp-n113301/filesystem xfs,udf,iso9660,ext3
+
+The filesystems will attempt to be mounted in order and any that succeed 
+will have their contents copied to $destination/$filesystem
