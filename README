@@ -1,0 +1,29 @@
+          ==================================================
+                 The QEMU Disk Image Extractor Thing
+          ==================================================
+
+Hi there.  This is a collection of scripts for building QEMU, a
+Linux kernel and initramfs for mounting disk images and extracting
+data from them.  We run this inside a VM instead of loopback mounting
+so that we can use patched versions of the kernel that support
+additional filesystems without affecting the host server's kernel.
+
+Requirements
+------------
+
+* Linux host machine
+  - x86_64 (it should work on x86 but you'll need to hack it a bit)
+  - gcc 4
+  - NFS server
+
+Building
+--------
+
+Unpack somewhere and run `make'.  Copy the contents of 'dist' somewhere 
+useful, like /usr/local/qemu-image-extractor
+
+Using
+-----
+
+The destination directory for the image to be extracted to must be 
+exported over NFS.  Then run the sc
