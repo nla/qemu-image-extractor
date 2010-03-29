@@ -30,6 +30,7 @@ for fs in $(echo $filesystems | tr "," " "); do
     mkdir -p "$copypath/$fs"
     tar -pcC /mnt/src . | tar -pxv -C "$copypath/$fs"
     chown -R 206:280 "$copypath/$fs"
+    chmod -R ug+rw "$copypath/$fs"
     umount /mnt/src
   fi
 done
