@@ -30,8 +30,12 @@ for fs in $(echo $filesystems | tr "," " "); do
     mkdir -p "$copypath/$fs"
     tar -pcC /mnt/src . | tar -pxv -C "$copypath/$fs"
     chown -R 206:280 "$copypath/$fs"
-    chmod -R ug+rw "$copypath/$fs"
+    # permissions changed by Tomas
+    #chmod -R ug+rw "$copypath/$fs"
+    find "$copypath/$fs" -type d -exec chmod a+r '{}' \;
+    find "$copypath/$fs" -type f -exec chmod a+rx '{}' \;
     umount /mnt/src
+    break 	# Tomas ???
   fi
 done
 
