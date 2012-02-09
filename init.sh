@@ -35,7 +35,7 @@ for fs in $(echo $filesystems | tr "," " "); do
     find "$copypath/$fs" -type d -exec chmod a+r '{}' \;
     find "$copypath/$fs" -type f -exec chmod a+rx '{}' \;
     umount /mnt/src
-    break 	# Tomas ???
+    break
   fi
 done
 

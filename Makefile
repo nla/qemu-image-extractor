@@ -66,7 +66,7 @@ tarballs/qemu-${QEMU_VERSION}.tar.gz:
 	wget -c http://download.savannah.gnu.org/releases/qemu/qemu-${QEMU_VERSION}.tar.gz -O $@
 
 tarballs/linux-${KERNEL_VERSION}.tar.bz2:
-	wget -c http://www.au.kernel.org/pub/linux/kernel/v2.6/linux-${KERNEL_VERSION}.tar.bz2 -O $@
+	wget -c http://www.kernel.org/pub/linux/kernel/v2.6/linux-${KERNEL_VERSION}.tar.bz2 -O $@
 
 tarballs:
 	mkdir -p tarballs
