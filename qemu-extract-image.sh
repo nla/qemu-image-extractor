@@ -18,4 +18,4 @@ exec "$QHOME"/bin/qemu-system-x86_64 \
   -initrd "$QHOME/lib/initramfs" \
   -serial stdio \
   -hda "$DISK_IMAGE" \
-  -append "console=ttyS0 quiet nfspath=$NFS_PATH copypath=$COPY_PATH filesystems=$FILESYSTEMS"
+  -append "noapic console=ttyS0 quiet nfspath=$NFS_PATH copypath=$COPY_PATH filesystems=$FILESYSTEMS"
