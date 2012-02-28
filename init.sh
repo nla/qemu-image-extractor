@@ -32,10 +32,9 @@ for fs in $(echo $filesystems | tr "," " "); do
     chown -R 206:280 "$copypath/$fs"
     # permissions changed by Tomas
     #chmod -R ug+rw "$copypath/$fs"
-    find "$copypath/$fs" -type d -exec chmod a+r '{}' \;
-    find "$copypath/$fs" -type f -exec chmod a+rx '{}' \;
+    find "$copypath/$fs" -type d -exec chmod a+rx '{}' \;
+    find "$copypath/$fs" -type f -exec chmod a+r '{}' \;
     umount /mnt/src
-    break
   fi
 done
 
