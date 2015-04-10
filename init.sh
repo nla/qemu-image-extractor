@@ -38,8 +38,8 @@ for fs in $(echo $filesystems | tr "," " "); do
     chgrp -R 280 "$copypath/$fs"
     # permissions changed by Tomas
     #chmod -R ug+rw "$copypath/$fs"
-    find "$copypath/$fs" -type d -exec chmod a+rx '{}' \;
-    find "$copypath/$fs" -type f -exec chmod a+r '{}' \;
+    find "$copypath/$fs" -type d -exec chmod a+rx,ug+w '{}' \;
+    find "$copypath/$fs" -type f -exec chmod a+r,ug+w '{}' \;
     umount /mnt/src
     echo "SUCCESS: $fs"
   fi
