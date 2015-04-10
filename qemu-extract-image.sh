@@ -18,5 +18,5 @@ exec "$QHOME"/bin/qemu-system-x86_64 \
   -initrd "$QHOME/lib/initramfs" \
   -serial stdio \
   -drive file="$DISK_IMAGE",readonly=on,if=virtio \
-  -fsdev local,security_model=passthrough,id=fsdev0,path=$COPY_PATH -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare \
+  -fsdev local,security_model=none,id=fsdev0,path=$COPY_PATH -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare \
   -append "noapic console=ttyS0 quiet filesystems=$FILESYSTEMS"
